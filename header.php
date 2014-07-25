@@ -1,9 +1,10 @@
 <?php
-session_start();
+include 'verifica.php';
+//session_start();
 
-//if ($_SESSION['logado'] != true) {
-//    header("Location: /index.php");
-//}
+if (!$_SESSION['logado']) {
+    header("location: index.php");
+}
 ?>
 <!DOCTYPE html>
 
@@ -11,7 +12,8 @@ session_start();
     <head>
         <meta charset="UTF-8">
         <title> Curso Alpha </title>
-        <link rel="shortcut icon" href="/sasoka_emblem.png" />
+        <link rel="shortcut icon" href="sasokaEm.png" />
+        <!--<link rel="shortcut icon" href="logo.png" />-->
 
         <link href="css/bootstrap.min.css" rel="stylesheet">
 

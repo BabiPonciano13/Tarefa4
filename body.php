@@ -8,7 +8,7 @@
                             <li><a href='/alunos.php'>Alunos</a></li>
                             <li><a href='/professores.php'>Professores</a></li>
                             <li><a href='/usuarios.php'>Usuários</a></li>
-                            <li><a href="/#"><span class="glyphicon glyphicon-off"></span> Sair</a></li>
+                            <li><a href="/logout.php"><span class="glyphicon glyphicon-off"></span> Sair</a></li>
                         </ul>
                     </div>
                 </div>

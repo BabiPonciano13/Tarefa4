@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
         <meta charset="utf-8" />
-        <link rel="shortcut icon" href="sasoka_emblem.png" />
+        <link rel="shortcut icon" href="sasokaEm.png" />
         <title>Login</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+        <script src="js/jquery.min.login.js"></script>
         <script>
             $(function() {
                 var $form_inputs = $('form input');
@@ -173,11 +174,11 @@
     <body id="home">
         <div class="rain">
             <div class="border start">
-                <form action="Verifica_login.php" method='post'>
+                <form action="verifica_login.php" method='post'>
                     <label for="email">Email</label>
-                    <input name="email" type="text" placeholder="Email"/>
-                    <label for="pass">Senha</label>
-                    <input name="pass" type="password" placeholder="Senha"/>
+                    <input name="email" type="text" onkeyup="maiuscula(this)" placeholder="Email"/>
+                    <label for="senha" >Senha</label>
+                    <input name="senha" type="password" placeholder="Senha"/>
                     <input type="submit" value="LOGIN"/>
                     <input type="hidden" name="acao" value="fazer_login"/>
                 </form>
