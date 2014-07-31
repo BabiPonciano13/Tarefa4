@@ -11,7 +11,7 @@ $dados = $stmt->fetchAll(PDO::FETCH_OBJ);
 
 <div class="col-md-12">
     <div style="text-align: center"><h2>Alunos</h2></div>
-   <table class="table table-bordered table-hover" style="background-color: #935D69;">
+    <table class="table table-bordered table-hover" style="background-color: #935D69;">
         <thead>
             <tr>
                 <th>#</th>
@@ -20,9 +20,10 @@ $dados = $stmt->fetchAll(PDO::FETCH_OBJ);
                 <th>Estado</th>
                 <th>Numero</th>
                 <th>Professores</th>
-                <th>Editar</th>
-                <th>Excluir</th>
-
+                <?php if ($_SESSION['admin'] and $_SESSION['admin_2'] == 'true'): ?>
+                    <th>Editar</th>
+                    <th>Excluir</th>
+                <?php endif; ?>
             </tr>
         </thead>
         <tbody>
@@ -35,25 +36,17 @@ $dados = $stmt->fetchAll(PDO::FETCH_OBJ);
                     <td><?= $row->estado; ?></td>
                     <td><?= $row->numero; ?></td>
                     <td><?= $row->professor; ?></td>
-                            <td>
-                                <form method="POST" action="crud_alunos/form_editar.php">
-                                    <input type="hidden" name="id" value="<?= $row->id; ?>" />
-                                    <input type="hidden" name="nome" value="<?= $row->nome; ?>" />
-                                    <input type="hidden" name="cpf" value="<?= $row->cpf; ?>" />
-                                    <input type="hidden" name="estado" value="<?= $row->estado; ?>" />
-                                    <input type="hidden" name="numero" value="<?= $row->numero; ?>" />
-                                    <input type="hidden" name="professores" value="<?= $row->prof_id; ?>" />
-                                    <input type="submit" value="Editar" class="btn btn-info" />
-                                </form>
-                            </td>
-                    <td><a href="crud_alunos/deletar_alunos.php?id=<?= $row->id; ?>" class="btn btn-danger">Excluir</a></td>
+                    <?php if ($_SESSION['admin'] and $_SESSION['admin_2'] == 'true'): ?>
+                        <td><a href="crud_alunos/form_editar.php?id=<?= $row->id; ?>" class="btn btn-info">Editar</a></td>
+
+                        <td><a href="crud_alunos/deletar_alunos.php?id=<?= $row->id; ?>" class="btn btn-danger">Excluir</a></td>
+                    <?php endif; ?>
                 </tr>
-<?php endforeach; ?>
+            <?php endforeach; ?>
         </tbody>
-   </table>
-    <a href="crud_alunos/form_alunos.php" class="btn btn-success">Inserir</a>
-   
-        
-        <?php
-    include "footer.php"; ?>
-    </div>
+    </table>
+    <?php if ($_SESSION['admin'] == 'true'): ?>
+        <a href="crud_alunos/form_alunos.php" class="btn btn-success">Inserir</a>
+    <?php endif; ?>
+    <?php include "footer.php"; ?>
+</div>

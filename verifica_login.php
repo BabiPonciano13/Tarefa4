@@ -22,6 +22,8 @@ $senha = $_POST['senha'];
     $_SESSION['email'] = $row->login;
     $_SESSION['senha'] = $row->senha;
     $_SESSION['logado'] = TRUE;
+    $_SESSION['admin'] = $row->admin;
+    $_SESSION['admin_2'] = $row->admin_2;
 
     header("location: curso_alpha.php");
 } else {

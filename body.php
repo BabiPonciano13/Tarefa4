@@ -7,13 +7,13 @@
                             <li><a href='/curso_alpha.php'>CURSO ALPHA</a></li>
                             <li><a href='/alunos.php'>Alunos</a></li>
                             <li><a href='/professores.php'>Professores</a></li>
+                            <?php if ($_SESSION['admin'] == 'true'): ?>
                             <li><a href='/usuarios.php'>Usuários</a></li>
+                             <?php endif; ?>
                             <li><a href="/logout.php"><span class="glyphicon glyphicon-off"></span> Sair</a></li>
                         </ul>
                     </div>
                 </div>
             </nav>
         
-        <?php
-        // put your code here
-        ?>
+      
