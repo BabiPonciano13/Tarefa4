@@ -40,7 +40,7 @@ $dados = $stmt->fetchAll(PDO::FETCH_OBJ);
             <?php endforeach; ?>
         </tbody>
     </table>
-    <?php if ($_SESSION['admin'] == 'true'): ?>
+        <?php if ($_SESSION['admin'] or $_SESSION['admin_2'] == 'true'): ?>
         <a href="crud_professores/form_professores.php" class="btn btn-success">Inserir</a>
     <?php endif; ?>
     <?php include "footer.php"; ?>
