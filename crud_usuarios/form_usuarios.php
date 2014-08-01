@@ -23,13 +23,13 @@ include '../body.php';
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputnivel_de_permissao" class="col-sm-2 control-label">Nível de Permissão</label>
+                <label for="inputnivel_de_permissao" class="col-sm-2 control-label">Editar</label>
                 <div class="col-sm-10">
-                    <select name="nivel_de_permissao">
-                        <option value="admin">Administrador</option>
-                        <option value="user">Usuário</option>
-                        <option value="guest">Visitante</option>
-                    </select>
+                    <input type="checkbox" name="admin" />
+                </div>
+                <label for="inputnivel_de_permissao" class="col-sm-2 control-label">Excluir</label>
+                <div class="col-sm-10">
+                    <input type="checkbox" name="admin2" />
                 </div>
             </div>
         </fieldset>

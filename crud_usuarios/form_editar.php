@@ -34,27 +34,15 @@ $dados2 = $stmt->fetchAll(PDO::FETCH_OBJ);
                 <div class="col-sm-10">
                     <input type="password" name="senha" value="<?= $dados->senha; ?>"  class="form-control" id="inputSenha" placeholder="Senha">
                 </div>
-            </div>
-            <label for="inputnivel_de_permissao" class="col-sm-2 control-label">Nível de Permissão</label>
-            <div class="col-sm-10">
-                 <select name="nivel_de_permissao">
-                        <option <?php
-                            if ($dados->admin2 == TRUE) {
-                                echo 'selected';
-                            }
-                            ?> value="admin">Administrador</option>
-                        <option <?php
-                            if ($dados->admin2 == TRUE) {
-                                echo 'selected';
-                            }
-                            ?> value="user">Usuário</option>
-                        <option <?php
-                            if ($dados->admin2 == TRUE) {
-                                echo 'selected';
-                            }
-                            ?> value="guest">Visitante</option>
-                    </select>
-            </div>
+             <div class="form-group">
+                <label for="inputnivel_de_permissao" class="col-sm-2 control-label">Editar</label>
+                <div class="col-sm-10">
+                    <input type="checkbox" <?php if($dados->admin) echo "checked='checked'"  ?> name="admin" />
+                </div>
+                <label for="inputnivel_de_permissao" class="col-sm-2 control-label">Excluir</label>
+                <div class="col-sm-10">
+                    <input type="checkbox" <?php if($dados->admin_2) echo "checked='checked'"  ?> name="admin2" />
+                </div>
             </div>
         </fieldset>
 
